@@ -2,6 +2,12 @@ import os
 import subprocess
 
 def concat_videos(width=1280, height=720):
+    '''
+    File paths should be relative to the root directory of the project.
+    Regardless of where you call this function, subprocess.run() will always
+    assume that you are calling it from the root directory of the project.
+    '''
+    
     ffmpeg_command = [
         "ffmpeg",
         "-f", "concat",
